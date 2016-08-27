@@ -1,0 +1,40 @@
+\documentclass{scrartcl}
+\reversemarginpar
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
+\usepackage[nochapters]{classicthesis}
+\usepackage[LabelsAligned]{currvita}
+\usepackage{hyperref}
+
+\definecolor{carnelian}{rgb}{0.7, 0.11, 0.11}
+\renewcommand{\cvheadingfont}{\LARGE\color{carnelian}}
+\hypersetup{colorlinks, breaklinks, urlcolor=carnelian, linkcolor=carnelian} % Set link colors
+
+\date{}
+
+\newlength{\datebox}\settowidth{\datebox}{Jun 2015--Jun 2016}
+\newcommand{\NewEntry}[3]{\noindent\hangindent=2em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3
+\vspace{0.5em}}
+
+\newlength{\personalbox}\settowidth{\personalbox}{phone}
+\newcommand{\NewPersonalEntry}[3]{\small\noindent\hangindent=2em\hangafter=0 \parbox{\personalbox}{\small \textit{#1}}\hspace{1.5em} #2 #3
+\vspace{0.5em}}
+
+\newcommand{\Description}[1]{\hangindent=2em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}}
+
+\begin{document}
+  \thispagestyle{empty}
+  \begin{cv}{\spacedallcaps{Mark A. Bryan}}
+    \vspace{1em}
+
+    \input{personal-info.tex}
+    \input{education.tex}
+    \input{coursework.tex}
+    \input{experience.tex}
+    \input{projects.tex}
+    \input{community-service.tex}
+    \input{programming-skills.tex}
+    \input{other-info.tex}
+    \newpage
+
+  \end{cv}
+\end{document}
