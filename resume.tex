@@ -13,7 +13,7 @@
 \newlength{\datebox}\settowidth{\datebox}{Jun 2015--Jun 2016}
 \newlength{\personalbox}\settowidth{\personalbox}{phone}
 
-\newcommand{\NewEntry}[3]{\noindent\hangindent=0em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.5em} #2 #3 \vspace{0.5em}}
+\newcommand{\NewEntry}[3]{\noindent\hangindent=0em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{0em} #2 #3 \vspace{0.5em}}
 \newcommand{\NewPersonalEntry}[2]{\small\noindent\hangindent=2em\hangafter=0 \parbox{\personalbox}{\small \textit{#1}}\hspace{1.5em} #2\vspace{0.25em}}
 \newcommand{\Description}[1]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}}
 \newcommand{\Coursework}[1]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{0em}}
@@ -25,7 +25,7 @@
 \begin{document}
   \thispagestyle{empty}
   \begin{cv}{\spacedallcaps{Mark A. Bryan}}
-    \vspace{1em}
+    \vspace{0.5em}
 
     \input{personal-info.tex}
     \input{education.tex}
