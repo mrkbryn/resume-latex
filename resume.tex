@@ -1,6 +1,5 @@
 \documentclass{scrartcl}
 \reversemarginpar
-\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
 \usepackage[nochapters]{classicthesis}
 \usepackage[LabelsAligned]{currvita}
 
@@ -13,6 +12,7 @@
 \newlength{\datebox}\settowidth{\datebox}{Jun 2015--Jun 2016}
 \newlength{\personalbox}\settowidth{\personalbox}{phone}
 
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
 \newcommand{\NewEntry}[3]{\noindent\hangindent=0em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{0em} #2 #3 \vspace{0.5em}}
 \newcommand{\NewPersonalEntry}[2]{\small\noindent\hangindent=2em\hangafter=0 \parbox{\personalbox}{\small \textit{#1}}\hspace{1.5em} #2\vspace{0.25em}}
 \newcommand{\Description}[1]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{1em}}
