@@ -2,43 +2,61 @@
 \reversemarginpar
 \usepackage[nochapters]{classicthesis}
 \usepackage[LabelsAligned]{currvita}
+\usepackage{enumitem}
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
 
-\definecolor{carnelian}{rgb}{0.7, 0.11, 0.11}
-\renewcommand{\cvheadingfont}{\LARGE\color{carnelian}}
+\setlist[itemize]{leftmargin=*,nosep}
+
+\renewcommand\labelitemi{--}
 
 \usepackage{hyperref}
-\hypersetup{colorlinks, breaklinks, urlcolor=carnelian, linkcolor=carnelian}
 
-\newlength{\datebox}\settowidth{\datebox}{Jun 2015--Jun 2016}
-\newlength{\personalbox}\settowidth{\personalbox}{phone}
+\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small #1}}
 
-\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small#1}} % New command defining the margin text style
-\newcommand{\NewEntry}[3]{\noindent\hangindent=0em\hangafter=0 \parbox{\datebox}{\small \textit{#1}}\hspace{1.0em} #2 #3 \vspace{0.5em}}
-\newcommand{\NewPersonalEntry}[2]{\small\noindent\hangindent=2em\hangafter=0 \parbox{\personalbox}{\small \textit{#1}}\hspace{1.5em} #2\vspace{0.25em}}
-\newcommand{\Description}[1]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{.5em}}
-\newcommand{\Coursework}[1]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{#1}\par\normalsize\vspace{0em}}
-\newcommand{\SectionHeading}[1]{\noindent\spacedlowsmallcaps{#1}\vspace{0.25em}}
+% {Company}{Position}{Location}{Dates}
+\newcommand{\NewEntry}[4]{
+\noindent\hangindent=0em\hangafter=0
+{\small\bfseries #1}
+\hspace{0.25em}
+{\small #2}
+\hfill
+{\small\itshape #3}
+\hspace{0.5em}
+{\small\itshape #4}
+}
 
-% command for listing programming skills, interests, etc.
-\newcommand{\CategoryListing}[2]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{\MarginText{#1}#2}\par\normalsize\vspace{.25em}}
+
+\newcommand{\Description}[1]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{#1} \par\normalsize }
+\newcommand{\SectionHeading}[1]{\noindent {\normalsize \hfill \uppercase{#1}} \hfill \vspace{0.25em}}
+\newcommand{\CategoryListing}[2]{\hangindent=0em\hangafter=0\noindent\raggedright\footnotesize{{\small\itshape #1}: #2}\par\normalsize\vspace{.25em}}
 
 \date{}
 
 \begin{document}
-  \thispagestyle{empty}
-  \begin{cv}{\spacedallcaps{Mark A. Bryan}}
-    \vspace{0.5em}
 
-    \input{personal-info.tex}
-    \input{education.tex}
-    \input{coursework.tex}
-    \input{experience.tex}
-    \input{projects.tex}
-    \input{community-service.tex}
-    \input{programming-skills.tex}
-    \input{other-info.tex}
+\thispagestyle{empty}
+\begin{cv}
 
-    \newpage
+{\Huge
+\hfill
+Mark Bryan
+\hfill
+}
 
-  \end{cv}
+\vspace{0.5em}
+
+\input{personal-info.tex}
+
+\hrulefill
+
+\input{education.tex}
+\input{experience.tex}
+\input{publications-presentations-awards.tex}
+\input{programming-skills.tex}
+\input{community-service.tex}
+\input{other-info.tex}
+
+\newpage
+
+\end{cv}
 \end{document}
