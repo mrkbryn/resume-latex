@@ -3,24 +3,22 @@
 \usepackage[nochapters]{classicthesis}
 \usepackage[LabelsAligned]{currvita}
 \usepackage{enumitem}
-\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
+\usepackage[paperwidth=8.5in,paperheight=11in,top=0.25in, bottom=0.5in, left=0.5in, right=0.5in]{geometry}
 
-\setlist[itemize]{leftmargin=*,nosep}
+\setlist[itemize]{leftmargin=0.25in,nosep}
 
-\renewcommand\labelitemi{$\cdot$}
+% \renewcommand\labelitemi{$\cdot$}
 
 \usepackage{hyperref}
 
 %\newcommand{\MarginText}[1]{\marginpar{\raggedleft\itshape\small #1}}
 
 % example \SectionHeading{Education}
-\newcommand{\SectionHeading}[1]{
-\noindent
+\newcommand{\SectionHeading}[1]{\vspace{-0.5em}
 
-\hrulefill
+\noindent\hrulefill
 
-{\normalsize\bfseries \hfill \underline{\smash{#1}} \hfill}
-\vspace{0.25em}
+{\noindent\normalsize\bfseries \hfill #1 \hfill}
 }
 
 % {Company}{Position}{Location}{Dates}
@@ -58,7 +56,7 @@ Mark Bryan
 
 \input{personal-info.tex}
 
-\vspace{-0.5em}
+
 
 \input{education.tex}
 \input{experience.tex}
